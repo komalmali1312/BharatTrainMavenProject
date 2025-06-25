@@ -72,6 +72,8 @@ public class Assignment19_DefaultInterface {
 		cs.accept("Komal");
 		Assignment19_DefaultInterface classobject = new Assignment19_DefaultInterface();
 		classobject.Consumerdefault1(2);
+		
+		
 	}
 
 }
