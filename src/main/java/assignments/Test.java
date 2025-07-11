@@ -4,47 +4,47 @@ package assignments;
 
 
 public class Test {
-static boolean isPrime(int n)
+public static void main(String args[])
 {
-if(n<2)
-	return false;
-for(int i=2;i*i<=n;i++)
+/*int[] studentsmarks= {21,67,99,100,25};
+
+for(int i=0;i<studentsmarks.length-1;i++)
 {
-	if(n%i==0)
-		return false;
+for(int j=i+1;j<studentsmarks.length-1;j++)
+{
+	int temp=0;
+if(studentsmarks[i]<studentsmarks[j])
+{
+	temp=studentsmarks[i];
+	studentsmarks[i]=studentsmarks[j];
+	studentsmarks[j]=temp;
 }
-return true;
 }
-	public static void main(String[] args) {
-	//Fibbonnacy series 
-	int a=0,b=1,fiboutput=0,count=10;
-	for(int i=0;i<count;i++)
+}
+for(int k=0;k<studentsmarks.length;k++)
+{
+	System.out.println(studentsmarks[k]);
+}
+	String s="Prachi Komal Rohit";
+	String rev="";
+	String Sepword[]=s.split(" ");
+	for(int i=Sepword.length-1;i>=0;i--)
 	{
-		fiboutput=a+b;
-		a=b;
-		b=fiboutput;
+	System.out.println(Sepword[i]);
+	for(int j=Sepword[i].length()-1;j>=0;j--)
+	{
+		rev=rev+Sepword[i].charAt(j);
+	}
 	
-System.out.print(fiboutput+" ");
+	if(!rev.isEmpty())
+	{
+		rev=rev+" ";
 	}
-	//prime number
-		if(isPrime(12))
-				System.out.println("Yes it is prime");
-		else
-			System.out.println("Yes it is not prime");
-		
-		//Palindrome string check
-		String s="Madam".toLowerCase();
-		String reverse="";
-		for(int i=s.length()-1;i>=0;i--)
-		{
-		reverse=reverse+s.charAt(i);
-		}
-		System.out.println(reverse);
-		if(reverse.equals(s))
-			System.out.println("It is Palindrome");
-		else
-			System.out.println("It is Not Palindrome");
-		
 	}
+	System.out.println(rev);*/
+	//Print Pattern
+	
+}
+
 
 }

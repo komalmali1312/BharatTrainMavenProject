@@ -8,7 +8,7 @@ public class SeleniumLocatorsParabank {
 
 	public static void main(String[] args) {
 //To Launch Website on Chrome		
-		WebDriver driver=new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.manage().window().maximize();
 //Logo Locator
@@ -93,7 +93,7 @@ public class SeleniumLocatorsParabank {
 //Read More second Option
 		driver.findElement(By.xpath("(//a[text()='Read More'])[2]"));
 //Home
-		//driver.findElement(By.cssSelector("#footerPanel>ul>li>a[href='index.htm']"));
+		// driver.findElement(By.cssSelector("#footerPanel>ul>li>a[href='index.htm']"));
 		driver.findElement(By.xpath("//a[text()='Home']"));
 //|About Us
 		driver.findElement(By.xpath("(//a[text()='About Us'])[2]"));
@@ -113,8 +113,7 @@ public class SeleniumLocatorsParabank {
 		driver.findElement(By.cssSelector("p.copyright"));
 //Visit us at:www.parasoft.com	
 		driver.findElement(By.cssSelector("ul.visit"));
-		
-		
+
 		System.out.println("All Locators working Properly");
 		driver.close();
 	}
