@@ -1,49 +1,51 @@
 package assignments;
 
-
-
+import java.util.HashMap;
 
 public class Test {
 public static void main(String args[])
 {
-/*int[] studentsmarks= {21,67,99,100,25};
-
-for(int i=0;i<studentsmarks.length-1;i++)
-{
-for(int j=i+1;j<studentsmarks.length-1;j++)
-{
-	int temp=0;
-if(studentsmarks[i]<studentsmarks[j])
-{
-	temp=studentsmarks[i];
-	studentsmarks[i]=studentsmarks[j];
-	studentsmarks[j]=temp;
-}
-}
-}
-for(int k=0;k<studentsmarks.length;k++)
-{
-	System.out.println(studentsmarks[k]);
-}
-	String s="Prachi Komal Rohit";
-	String rev="";
-	String Sepword[]=s.split(" ");
-	for(int i=Sepword.length-1;i>=0;i--)
+//Palindrome String
+	/*String S="Sir".toLowerCase();
+	String Rev="";
+	for(int i=S.length()-1;i>=0;i--)
 	{
-	System.out.println(Sepword[i]);
-	for(int j=Sepword[i].length()-1;j>=0;j--)
-	{
-		rev=rev+Sepword[i].charAt(j);
+	Rev=Rev+S.charAt(i);	
 	}
+	System.out.println(Rev);
+	if(Rev.equals(S))
+		System.out.println("String is Palindrome");
+	else
+		System.out.println("String is Not Palindrome");
 	
-	if(!rev.isEmpty())
+	String S="KomalMali".toLowerCase();
+	HashMap<Character,Integer> map1=new HashMap<>();
+	for(int i=0;i<S.length();i++)
 	{
-		rev=rev+" ";
+	if(!map1.containsKey(S.charAt(i)))
+	{
+		map1.put(S.charAt(i), 1);
+	}
+	else
+	{
+		map1.put(S.charAt(i), map1.get(S.charAt(i))+1);
 	}
 	}
-	System.out.println(rev);*/
-	//Print Pattern
+	System.out.println(map1);*/
 	
+	String S="I Love Java Python Java Love";
+	String Sep[]=S.split(" ");
+	String Unique="";
+	for(int i=0;i<Sep.length;i++)
+	{
+	if(!Unique.contains(Sep[i]))
+	{
+		Unique=Unique+Sep[i];	
+	}
+	if(!Unique.isEmpty())
+		Unique=Unique+" ";
+	}
+	System.out.println(Unique);
 }
 
 

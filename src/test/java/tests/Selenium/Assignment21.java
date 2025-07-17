@@ -17,6 +17,7 @@ public class Assignment21 {
 	public static void main(String[] args) throws InterruptedException {
 //		1. Launch browser window
 		WebDriver driver= new ChromeDriver();
+
 //		2. Maximize the browser window
 		driver.manage().window().maximize();
 //		3. Delete all the cookies
@@ -30,11 +31,12 @@ public class Assignment21 {
 //		6. Verify application logo
 		WebElement ApplicationLogo=driver.findElement(By.xpath("//img[@class=\"admin\"]"));
 		Boolean ApplicationLogoDisplayed=ApplicationLogo.isDisplayed();
+		Assert.assertTrue(ApplicationLogoDisplayed, "Logo not Displayed");
 		System.out.println("application logo Displayed satus is:"+ApplicationLogoDisplayed);
 //		7. Verify application caption
-		String Caption=driver.getCurrentUrl();
+		String Caption=driver.findElement(By.xpath("//p[@class='caption']")).getText();
 		System.out.println("Application Caption is:"+Caption);
-		Assert.assertEquals(Caption,"https://parabank.parasoft.com/parabank/index.htm","Caption does not match");
+		Assert.assertEquals(Caption,"Experience the difference","Caption does not match");
 //		8. Enter Invalid credentials in Username and Password textboxes
 		WebElement Username=driver.findElement(By.xpath("//input[@class='input' and @name='username']"));
 		Username.clear();
@@ -42,7 +44,7 @@ public class Assignment21 {
 		Thread.sleep(2000);
 		WebElement Password=driver.findElement(By.xpath("//input[@class='input' and @name='password']"));
 		Password.clear();
-		Password.sendKeys("admin");
+		//Password.sendKeys("admin");
 		Thread.sleep(2000);
 		WebElement LoginButton=driver.findElement(By.xpath("//div[@class='login']/child::input[@value='Log In']"));
 //		9. Click on Login Button
@@ -93,19 +95,23 @@ public class Assignment21 {
 		List<WebElement>coloumns=driver.findElements(By.xpath("//span[text()='Bookstore services:']/preceding-sibling::table/following::table[1]/tbody/tr[1]/td"));
 		System.out.println("Total Colns of BookStore Services are:"+coloumns.size());
 //		22.Get Column headers of book store services table
-		/*int TotalCols=coloumns.size();
+		int TotalCols=coloumns.size();
+		int TotalRows=rows.size();
 		for(int i=1;i<=TotalCols;i++)
 		{
-		WebElement ColumnHeaders=driver.findElement(By.xpath("//span[text()='Bookstore services:']/preceding-sibling::table/following::table[1]/tbody/tr[1]/td[i]"));
+		WebElement ColumnHeaders=driver.findElement(By.xpath("//span[text()='Bookstore services:']/preceding-sibling::table/following::table[1]/tbody/tr[1]/td["+i+"]"));
 		System.out.println("Column Header Value is:"+ColumnHeaders.getText());
-		}*/
-		WebElement ColumnHeaders1=driver.findElement(By.xpath("//span[text()='Bookstore services:']/preceding-sibling::table/following::table[1]/tbody/tr[1]/td[1]"));
-		System.out.println("Column Header Value is:"+ColumnHeaders1.getText());
-		WebElement ColumnHeaders2=driver.findElement(By.xpath("//span[text()='Bookstore services:']/preceding-sibling::table/following::table[1]/tbody/tr[1]/td[2]"));
-		System.out.println("Column Header Value is:"+ColumnHeaders2.getText());
-		WebElement ColumnHeaders3=driver.findElement(By.xpath("//span[text()='Bookstore services:']/preceding-sibling::table/following::table[1]/tbody/tr[1]/td[3]"));
-		System.out.println("Column Header Value is:"+ColumnHeaders3.getText());
+		}
+		
 //		23.Get all the data from book store service table
+		for(int r=2;r<TotalRows;r++)
+		{
+			for(int c=1;c<=TotalCols;c++)
+			{
+System.out.print(driver.findElement(By.xpath("//span[text()='Bookstore services:']/preceding-sibling::table/following::table[1]/tbody/tr["+r+"]/td["+c+"]")).getText());	
+			}
+			System.out.println();
+		}
 //		24.Close browser window
 	    driver.close();
 	}
